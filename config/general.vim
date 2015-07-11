@@ -187,11 +187,11 @@ if has('gui_running')
 
 	" GUI Font
 	if has('gui_gtk2')
-		set guifont=PragmataPro\ 12
+		set guifont=Monospace\ 11
 	elseif has('gui_macvim')
 		set guifont=Menlo\ Regular:h14
 	elseif has('gui_win32')
-		set guifont=Consolas:h11:cANSI
+		set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h11:cANSI
 	endif
 endif
 " }}}

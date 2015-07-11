@@ -19,8 +19,8 @@ if isdirectory($XDG_CONFIG_HOME.'/vim')
 	let $VIMPATH=expand('$XDG_CONFIG_HOME/vim')
 	let $VARPATH=expand('$XDG_CACHE_HOME/vim')
 else
-	let $VIMPATH=expand('~/.vim')
-	let $VARPATH=expand('~/.cache/vim')
+	let $VIMPATH=expand('~/vim-config')
+	let $VARPATH=expand('~/vim-config/cache/vim')
 endif
 
 function! s:source_file(path)
@@ -57,6 +57,7 @@ call s:source_file('terminal.vim')
 call s:source_file('utils.vim')
 call s:source_file('colors.vim')
 call s:source_file('bindings.vim')
+call s:source_file('my.vim')
 " }}}
 
 call neobundle#call_hook('on_source')

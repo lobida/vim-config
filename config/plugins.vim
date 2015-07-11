@@ -7,8 +7,8 @@ if neobundle#tap('unite.vim') "{{{
 	let g:unite_source_history_yank_enable = 1
 	nnoremap [unite]  <Nop>
 	xnoremap [unite]  <Nop>
-	nmap     f [unite]
-	xmap     f [unite]
+	nmap     z [unite]
+	xmap     z [unite]
 	nnoremap <silent> [unite]r   :<C-u>UniteResume -no-start-insert -force-redraw<CR>
 	nnoremap <silent> [unite]f   :<C-u>Unite file_rec/async<CR>
 	nnoremap <silent> [unite]i   :<C-u>Unite file_rec/git<CR>
@@ -43,9 +43,9 @@ endif
 
 "}}}
 if neobundle#tap('vimfiler.vim') "{{{
-	noremap <silent> <Leader>f :<C-u> execute 'VimFiler -explorer -winwidth=25 -split -toggle -buffer-name='.t:project_name<CR>
+	noremap <silent> <Leader>z :<C-u> execute 'VimFiler -explorer -winwidth=25 -split -toggle -buffer-name='.t:project_name<CR>
 	" Open VimFiler with current file selected
-	nnoremap <silent> fa  :<C-u>execute 'VimFiler -explorer -find -winwidth=25 -split -toggle -no-quit -buffer-name='.t:project_name<CR>
+	nnoremap <silent> za  :<C-u>execute 'VimFiler -explorer -find -winwidth=25 -split -toggle -no-quit -buffer-name='.t:project_name<CR>
 	let g:vimfiler_data_directory = $VARPATH.'/vimfiler'
 	let neobundle#hooks.on_source = $VIMPATH.'/config/plugins/vimfiler.vim'
 	call neobundle#untap()

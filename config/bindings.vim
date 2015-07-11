@@ -6,7 +6,7 @@
 " ------------
 
 " Maps the semicolon to colon in normal mode
-nmap ; :
+" nmap ; :
 
 if exists('g:elite_mode') && g:elite_mode
 	" Make arrow keys useful

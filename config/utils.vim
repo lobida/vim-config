@@ -3,12 +3,12 @@
 "---------------------------------------------------------
 
 " Reload .vimrc automatically
-autocmd MyAutoCmd BufWritePost vimrc,config/*.vim,neobundle.vim
-		\ TinyLine! | ToxidTab!
-		\ | NeoBundleClearCache | source $MYVIMRC
-		\ | TinyLine | ToxidTab
-		\ | call gitgutter#highlight#define_highlights()
-
+" autocmd MyAutoCmd BufWritePost vimrc,config/*.vim,neobundle.vim
+" 		\ TinyLine! | ToxidTab!
+" 		\ | NeoBundleClearCache | source $MYVIMRC
+" 		\ | TinyLine | ToxidTab
+" 		\ | call gitgutter#highlight#define_highlights()
+" 
 " Check timestamp on window enter. More eager than 'autoread'
 autocmd MyAutoCmd WinEnter * checktime
 

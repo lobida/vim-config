@@ -13,6 +13,7 @@ NeoBundle 'Shougo/vimproc.vim', {
 	\ }}
 
 NeoBundle 'w0ng/vim-hybrid'
+NeoBundle 'kristijanhusak/vim-hybrid-material'
 NeoBundle 'bogado/file-line'
 NeoBundle 'Shougo/neomru.vim'
 NeoBundle 'itchyny/vim-cursorword'
@@ -25,6 +26,17 @@ NeoBundle 'regedarek/ZoomWin'  " TODO: Lazy has problems restoring splits
 " My own plugins
 NeoBundle 'rafi/vim-tinyline', { 'directory': 'tinyline' }
 NeoBundle 'rafi/vim-tagabana', { 'directory': 'tagabana' }
+
+" My old plugins
+NeoBundle 'm-kat/aws-vim'
+let g:AWSVimValidate = 1
+NeoBundle 'ngmy/vim-rubocop'
+" NeoBundle 'bling/vim-airline'
+NeoBundle 'maxbrunsfeld/vim-emacs-bindings'
+NeoBundle 'WolfgangMehner/vim-plugins'
+NeoBundle	'jceb/vim-orgmode'
+NeoBundle 'majutsushi/tagbar' 
+NeoBundle 'Shougo/unite.vim'
 
 " LAZY LOADING from here on
 " --------------------------------------------------------
@@ -92,11 +104,11 @@ NeoBundleLazy 'vim-ruby/vim-ruby', {
 	\ 'mappings': '<Plug>',
 	\ 'filetypes': 'ruby'
 	\ }
-NeoBundleLazy 'http://svn.macports.org/repository/macports/contrib/mpvim/', {
-	\ 'disabled': len($SSH_CLIENT),
-	\ 'filetypes': 'portfile'
-	\ }
-
+" NeoBundleLazy 'http://svn.macports.org/repository/macports/contrib/mpvim/', {
+" 	\ 'disabled': len($SSH_CLIENT),
+" 	\ 'filetypes': 'portfile'
+" 	\ }
+" 
 " }}}
 " JavaScript {{{
 " ----------
@@ -104,13 +116,13 @@ NeoBundleLazy 'jelera/vim-javascript-syntax', { 'filetypes': 'javascript' }
 NeoBundleLazy 'jiangmiao/simple-javascript-indenter', {
 	\ 'filetypes': 'javascript',
 	\ }
-NeoBundleLazy 'marijnh/tern_for_vim', {
-	\   'build': { 'others': 'npm install' },
-	\   'disabled': ! executable('npm') || $SSH_CLIENT,
-	\   'filetypes': 'javascript'
-	\ }
+" NeoBundleLazy 'marijnh/tern_for_vim', {
+" 	\   'build': { 'others': 'npm install' },
+" 	\   'disabled': ! executable('npm') || $SSH_CLIENT,
+" 	\   'filetypes': 'javascript'
+" 	\ }
 
-" }}}
+"  }}}
 " PHP {{{
 " ---
 NeoBundleLazy 'StanAngeloff/php.vim', { 'filetypes': 'php' }
