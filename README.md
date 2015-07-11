@@ -341,8 +341,8 @@ Arrows | Normal | Resize splits (* Enable `g:elite_mode` in `.vault.vim`)
 `<leader>`+`lk` | Normal | Previous on location list
 `<leader>`+`S` | Normal/visual | Source selection
 `<leader>`+`ml` | Normal | Append modeline
-`f`+`z` | Normal | Focus the current fold by closing all others (mzzM`zzv)
-`f`+`y` | Normal | Yank filepath to X11 clipboard
+`z`+`z` | Normal | Focus the current fold by closing all others (mzzM`zzv)
+`z`+`y` | Normal | Yank filepath to X11 clipboard
 | **Within _quickfix_ and _diff_** |||
 `q` | Normal | Quit buffer
 
@@ -350,22 +350,22 @@ Arrows | Normal | Resize splits (* Enable `g:elite_mode` in `.vault.vim`)
 
 Key   | Mode | Action
 ----- |:----:| ------------------
-`f`+`r` | Normal | Resumes Unite window
-`f`+`f` | Normal | Opens Unite file recursive search
-`f`+`i` | Normal | Opens Unite git file search
-`f`+`g` | Normal | Opens Unite grep with ag (the_silver_searcher)
-`f`+`u` | Normal | Opens Unite source
-`f`+`t` | Normal | Opens Unite tag
-`f`+`T` | Normal | Opens Unite tag/include
-`f`+`l` | Normal | Opens Unite location list
-`f`+`q` | Normal | Opens Unite quick fix
-`f`+`e` | Normal | Opens Unite register
-`f`+`j` | Normal | Opens Unite jump, change
-`f`+`h` | Normal | Opens Unite history/yank
-`f`+`s` | Normal | Opens Unite session
-`f`+`o` | Normal | Opens Unite outline
-`f`+`ma` | Normal | Opens Unite mapping
-`f`+`me` | Normal | Opens Unite output messages
+`z`+`r` | Normal | Resumes Unite window
+`z`+`f` | Normal | Opens Unite file recursive search
+`z`+`i` | Normal | Opens Unite git file search
+`z`+`g` | Normal | Opens Unite grep with ag (the_silver_searcher)
+`z`+`u` | Normal | Opens Unite source
+`z`+`t` | Normal | Opens Unite tag
+`z`+`T` | Normal | Opens Unite tag/include
+`z`+`l` | Normal | Opens Unite location list
+`z`+`q` | Normal | Opens Unite quick fix
+`z`+`e` | Normal | Opens Unite register
+`z`+`j` | Normal | Opens Unite jump, change
+`z`+`h` | Normal | Opens Unite history/yank
+`z`+`s` | Normal | Opens Unite session
+`z`+`o` | Normal | Opens Unite outline
+`z`+`ma` | Normal | Opens Unite mapping
+`z`+`me` | Normal | Opens Unite output messages
 `<leader>`+`b` | Normal | Opens Unite buffers, mru, bookmark
 `<leader>`+`ta` | Normal | Opens Unite tab
 `<leader>`+`gf` | Normal | Opens Unite file with word at cursor
