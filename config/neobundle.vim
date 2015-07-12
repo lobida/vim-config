@@ -35,7 +35,7 @@ NeoBundle 'ngmy/vim-rubocop'
 NeoBundle 'maxbrunsfeld/vim-emacs-bindings'
 NeoBundle 'WolfgangMehner/vim-plugins'
 NeoBundle	'jceb/vim-orgmode'
-NeoBundle 'majutsushi/tagbar' 
+NeoBundle 'majutsushi/tagbar'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'tpope/vim-speeddating'
 

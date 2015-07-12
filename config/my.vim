@@ -4,11 +4,13 @@ autocmd VimEnter * nested :TagbarOpen
  autocmd VimEnter * VimFiler -buffer-name=explorer -split -simple -winwidth=50 -toggle -project -no-quit
 " aws
 let g:AWSVimValidate = 1
-
+" tinyline
+" set statusline+=%(⎇\ %{TlBranchName()}\ %) "| Git branch name    | ⎇\master
 " Editing mappings
 map 0 ^
 nmap ;  ;
 nmap ,  , 
+nmap \  \ 
 " Move a line of text using ALT+[jk] or Comamnd+[jk] on mac
 nmap <M-j> mz:m+<cr>`z
 nmap <M-k> mz:m-2<cr>`z
