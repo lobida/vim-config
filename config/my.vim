@@ -1,7 +1,7 @@
 " tagbar
 autocmd VimEnter * nested :TagbarOpen
 " VimFiler
- autocmd VimEnter * VimFiler -buffer-name=explorer -split -simple -winwidth=50 -toggle -project -no-quit
+ autocmd VimEnter * VimFiler -buffer-name=explorer -split -simple -winwidth=40 -toggle -project -no-quit
 " aws
 let g:AWSVimValidate = 1
 " tinyline

@@ -68,6 +68,10 @@ endif
 
 "}}}
 if neobundle#tap('neosnippet.vim') "{{{
+	imap <C-q>     <Plug>(neosnippet_expand_or_jump)
+	smap <C-q>     <Plug>(neosnippet_expand_or_jump)
+	xmap <C-q>     <Plug>(neosnippet_expand_target)
+
 	let g:neosnippet#enable_snipmate_compatibility = 0
 	let g:neosnippet#enable_preview = 1
 	let g:neosnippet#disable_runtime_snippets = { '_': 1 }
@@ -495,4 +499,10 @@ endif
 
 "}}}
 
+if neobundle#tap('vim-surround') "{{{
+
+	call neobundle#untap()
+endif
+
+"}}}
 " vim: set ts=2 sw=2 tw=80 noet :

@@ -1,0 +1,118 @@
+snippet dhcp "AWS::EC2::DHCPOptions"
+{
+    "Type" : "AWS::EC2::DHCPOptions",
+    "Properties" : {
+        "DomainName" : ${1:#String },
+        "DomainNameServers" : [ ${2:#String }],
+        "NetbiosNameServers" : [ ${3:#String }],
+        "NetbiosNodeType" : ${4:#Number },
+        "NtpServers" : [ ${5:#String }],
+        "Tags" : [ ${6:#EC2-Tag }]
+    }
+}
+
+snippet gateway "AWS::EC2::InternetGateway"
+{
+    "Type" : "AWS::EC2::InternetGateway",
+    "Properties" : {
+        "Tags" : [ ${1:#EC2-Tag }]
+    }
+}
+
+snippet vpcdhcp "AWS::EC2::VPCDHCPOptionsAssociation"
+{
+    "Type" : "AWS::EC2::VPCDHCPOptionsAssociation",
+    "Properties" : {
+        "DhcpOptionsId" : ${1:#String },
+        "VpcId" : ${2:#String }
+    }
+}
+
+snippet vpcgateway "AWS::EC2::VPCGatewayAttachment"
+{
+    "Type" : "AWS::EC2::VPCGatewayAttachment",
+    "Properties" : {
+        "InternetGatewayId" : ${1:#String },
+        "VpcId" : ${2:#String },
+        "VpnGatewayId" : ${3:#String }
+    }
+}
+
+snippet route "AWS::EC2::Route"
+{
+    "Type" : "AWS::EC2::Route",
+    "Properties" : {
+        "DestinationCidrBlock" : ${1:#String },
+        "GatewayId" : ${2:#String },
+        "InstanceId" : ${3:#String },
+        "NetworkInterfaceId" : ${4:#String },
+        "RouteTableId" : ${5:#String },
+        "VpcPeeringConnectionId" : ${6:#String },
+    }
+}
+
+snippet routetable "AWS::EC2::RouteTable"
+{
+    "Type" : "AWS::EC2::RouteTable",
+    "Properties" : {
+        "VpcId" : ${1:#String },
+        "Tags" : [ ${2:#EC2-Tag }]
+    }
+}
+
+snippet subnetrt "AWS::EC2::SubnetRouteTableAssociation"
+{
+    "Type" : "AWS::EC2::SubnetRouteTableAssociation",
+    "Properties" : {
+        "RouteTableId" : ${1:#String },
+        "SubnetId" : ${2:#String },
+    }
+}
+
+snippet nics "NetworkInterface Embedded"
+[{
+    "AssociatePublicIpAddress" : ${1:#Boolean },
+    "DeleteOnTermination" : ${2:#Boolean },
+    "Description" : ${3:#String },
+    "DeviceIndex" : ${4:#String },
+    "GroupSet" : [ ${5:#String}, ... ],
+    "NetworkInterfaceId" : ${6:#String },
+    "PrivateIpAddress" : ${7:#String },
+    "PrivateIpAddresses" : [ ${8:#PrivateIpAddressSpecification }, ... ],
+    "SecondaryPrivateIpAddressCount" : ${9:#Integer },
+    "SubnetId" : ${10:#String },
+}]
+
+snippet networkinterface "AWS::EC2::NetworkInterface"
+{
+    "Type" : "AWS::EC2::NetworkInterface",
+    "Properties" : {
+        "Description" : ${1:#String },
+        "GroupSet" : [ ${2:#String } ],
+        "PrivateIpAddress" : ${3:#String },
+        "PrivateIpAddresses" : [ ${4:#PrivateIpAddressSpecification }, ... ],
+        "SecondaryPrivateIpAddressCount" : ${5:#Integer },
+        "SourceDestCheck" : ${6:#Boolean },
+        "SubnetId" : ${7:#String },
+        "Tags" : [ ${8:#Resource_Tag }, ... ],
+    }
+}
+
+snippet stack "AWS::CloudFormation::Stack"
+{
+    "Type" : "AWS::CloudFormation::Stack",
+    "Properties" : {
+        "NotificationARNs" : [ ${1:#String } ],
+        "Parameters" : { 
+            ${2:#Parameters}
+        },
+            "TemplateURL" : ${3:#String },
+            "TimeoutInMinutes" : ${4:#String }
+    }
+}
+
+snippet output
+"${1:LogicalID }" : {
+  "Description" : "${2:#Information_about_the_value }",
+  "Value" : { "${3:Fn::GetAtt }" : [ "${4:#logicalNameOfResource}", "${5:#attributeName}" ] }
+}

@@ -38,6 +38,7 @@ NeoBundle	'jceb/vim-orgmode'
 NeoBundle 'majutsushi/tagbar'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'tpope/vim-speeddating'
+NeoBundle 'tpope/vim-surround'
 
 " LAZY LOADING from here on
 " --------------------------------------------------------
