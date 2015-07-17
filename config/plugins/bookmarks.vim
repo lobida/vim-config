@@ -4,8 +4,8 @@
 let g:bookmark_auto_save = 0
 let g:bookmark_save_per_working_dir = 0
 let g:bookmark_manage_per_buffer = 0
-let g:bookmark_sign = '⚐'                  " Bookmark sign
-let g:bookmark_annotation_sign = '⌦'       " Annonation sign
+let g:bookmark_sign = '⚐ '                  " Bookmark sign
+let g:bookmark_annotation_sign = '⌦ '       " Annonation sign
 
 highlight BookmarkSign            ctermfg=12 guifg=#4EA9D7
 highlight BookmarkAnnotationSign  ctermfg=11 guifg=#EACF49

@@ -126,8 +126,8 @@ call unite#custom#profile('default', 'context', {
 	\   'cursor_line_highlight': 'CursorLine',
 	\   'cursor_line_time': '0.5',
 	\   'candidate_icon': '-',
-	\   'marked_icon': '✓',
-	\   'prompt' : '§'
+	\   'marked_icon': '✓ ',
+	\   'prompt' : '§ '
 	\ })
 
 call unite#custom#profile('action', 'context', {

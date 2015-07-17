@@ -134,7 +134,7 @@ set nowrap                      " No wrap by default
 " --------------------
 set noshowmode          " Don't show mode in cmd window
 set shortmess=aoOTI     " Shorten messages and don't show intro
-set scrolloff=2         " Keep at least 2 lines above/below
+set scrolloff=5         " Keep at least 2 lines above/below
 set sidescrolloff=2     " Keep at least 2 lines left/right
 set pumheight=20        " Pop-up menu's line height
 set number              " Show line numbers
@@ -158,7 +158,8 @@ set laststatus=2        " Always show a status line
 " Changing characters to fill special ui elements
 set showbreak=↪
 set fillchars=vert:│,fold:─
-set list listchars=tab:\⋮\ ,extends:⟫,precedes:⟪,nbsp:.,trail:·
+set list listchars=tab:\ \ ,extends:⟫,precedes:⟪,nbsp:.,trail:·
+" set list listchars=extends:⟫,precedes:⟪,nbsp:.,trail:·
 
 " Do not display completion messages
 " Patch: https://groups.google.com/forum/#!topic/vim_dev/WeBBjkXE8H8
@@ -191,7 +192,7 @@ if has('gui_running')
 	elseif has('gui_macvim')
 		set guifont=Menlo\ Regular:h14
 	elseif has('gui_win32')
-		set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h11:cANSI
+		set guifont=DejaVu\ Sans\ Mono:h11:cANSI
 	endif
 endif
 " }}}

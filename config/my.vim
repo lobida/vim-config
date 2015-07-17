@@ -32,5 +32,4 @@ nnoremap <silent>[B :bfirst<CR>
 nnoremap <silent>]B :blast<CR>
 nnoremap <silent>[1 :1b<CR>
 
-set clipboard=unnamedplus
 set wrap

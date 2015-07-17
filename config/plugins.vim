@@ -110,7 +110,7 @@ endif
 if neobundle#tap('vim-unite-issue') "{{{
 	let g:unite_source_issue_file_dir = '~/docs/issues'
 	let g:unite_source_issue_jira_priority_table = {
-		\ 10000: '◡', 1: '⚡', 2: 'ᛏ', 3: '●', 4: '○', 5: '▽' }
+		\ 10000: '◡ ', 1: '⚡ ', 2: '↑ ', 3: '● ', 4: '○ ', 5: '▽ ' }
 	let g:unite_source_issue_jira_status_table = {
 		\ 1: 'plan', 3: 'develop', 4: 'reopened', 5: 'resolved', 6: 'closed',
 		\ 10000: 'feedback', 10001: 'stage-test', 10002: 'waiting',
@@ -281,8 +281,8 @@ endif
 if neobundle#tap('syntastic') "{{{
 	let g:syntastic_mode_map = { 'mode': 'passive' }
 	let g:syntastic_always_populate_loc_list = 1
-	let g:syntastic_error_symbol = "✗"
-	let g:syntastic_warning_symbol = "⚠"
+	let g:syntastic_error_symbol = '✗ '
+	let g:syntastic_warning_symbol = '⚠ '
 	let neobundle#hooks.on_source = $VIMPATH.'/config/plugins/syntastic.vim'
 	nnoremap <silent> <leader>sy :<C-u>call <SID>syntax_check_toggle()<CR>
 
@@ -389,8 +389,8 @@ endif
 "}}}
 if neobundle#tap('indentLine') "{{{
 	let g:indentLine_enabled = 1
-	let g:indentLine_char = '⋮'
-"	let g:indentLine_char = '┊'
+"	let g:indentLine_char = '⋮'
+	let g:indentLine_char = '┊ '
 	let g:indentLine_faster = 1
 	let g:indentLine_color_term = 239
 	let g:indentLine_color_gui = '#A4E57E'
