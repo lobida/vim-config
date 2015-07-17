@@ -21,7 +21,7 @@ snippet bench "Bench function" b
 	}
 snippet new "Constructor function"
 	pub fn new(${2}) -> ${1:Name} {
-		$1 { ${3} };
+		${1} { ${3} };
 	}
 snippet main "Main function"
 	pub fn main() {
@@ -44,7 +44,7 @@ snippet ecl "extern crate log"
 snippet mod
 	mod ${1:`substitute(vim_snippets#Filename(), '\(_\|^\)\(.\)', '\u\2', 'g')`} {
 		${0}
-	} /* $1 */
+	} /* ${1} */
 snippet testmod "Test module" b
 	#[cfg(test)]
 	mod tests {
@@ -118,7 +118,7 @@ snippet for "for ... in ... loop"
 snippet todo "TODO comment"
 	// [TODO]: ${0:Description}
 snippet fixme "FIXME comment"
-	// FIXME: $0
+	// FIXME: ${0}
 # Struct
 snippet st "Struct definition"
 	struct ${1:`substitute(vim_snippets#Filename(), '\(_\|^\)\(.\)', '\u\2', 'g')`} {
@@ -133,13 +133,13 @@ snippet stn "Struct with new constructor"
 		${0}
 	}
 
-	impl $1 {
-		pub fn new(${2}) -> $1 {
-			$1 { ${3} };
+	impl ${1} {
+		pub fn new(${2}) -> ${1} {
+			${1} { ${3} };
 		}
 	}
 snippet type "Type alias"
-	type ${1:NewName} = $2;
+	type ${1:NewName} = ${2};
 snippet enum "enum definition"
 	enum ${1:Name} {
 		${2},

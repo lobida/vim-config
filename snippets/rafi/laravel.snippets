@@ -1,7 +1,7 @@
 #resource controller
 snippet l_rsc
 /*!
- * \class       $1
+ * \class       ${1}
  *
  * \author      ${3:`!v g:snips_author`}
  * \date        `!v strftime('%d-%m-%y')`
@@ -36,8 +36,8 @@ class ${1:`!v expand('%:t:r')`} extends ${2:BaseController} {
 #service service provider
 snippet l_ssp
 /*!
- * \namespace   $1
- * \class       $2
+ * \namespace   ${1}
+ * \class       ${2}
  *
  * \author      ${3:`!v g:snips_author`}
  * \date        `!v strftime('%d-%m-%y')`
@@ -61,8 +61,8 @@ class ${2:`!v expand('%:t:r')`} extends ServiceProvider {
 #repository service provider
 snippet l_rsp
 /*!
- * \namespace   $2
- * \class       $3
+ * \namespace   ${2}
+ * \class       ${3}
  *
  * \author      ${4:`!v g:snips_author`}
  * \date        `!v strftime('%d-%m-%y')`
@@ -70,8 +70,8 @@ snippet l_rsp
 
 namespace ${2:Repositories\\${1:}};
 
-use Entities\\$1;
-use $2\\$1Repository;
+use Entities\\${1};
+use ${2}\\${1}Repository;
 use Illuminate\Support\ServiceProvider;
 
 class ${3:`!v expand('%:t:r')`} extends ServiceProvider {
@@ -82,8 +82,8 @@ class ${3:`!v expand('%:t:r')`} extends ServiceProvider {
     protected $defer = ${5:true};
 
     public function register() {
-        $this->app->bind('$2\\$1Interface', function($app) {
-            return new $1Repository(new $1());
+        $this->app->bind('${2}\\${1}Interface', function($app) {
+            return new ${1}Repository(new ${1}());
         });
     }
 
@@ -91,15 +91,15 @@ class ${3:`!v expand('%:t:r')`} extends ServiceProvider {
      * \brief   If $defer == true need this fn
      */ 
     public function provides() {
-        return ['$2\\$1Interface'];
+        return ['${2}\\${1}Interface'];
     }
 }
 
 #model
 snippet l_md
 /*!
- * \namespace   $1
- * \class       $2
+ * \namespace   ${1}
+ * \class       ${2}
  *
  * \author      ${3:`!v g:snips_author`}
  * \date        `!v strftime('%d-%m-%y')`
@@ -120,9 +120,9 @@ class ${2:`!v expand('%:t:r')`} extends \Eloquent {
 #abstract repository
 snippet l_ar
 /*!
- * \namespace   $1
- * \class       $2
- * \implements  $3
+ * \namespace   ${1}
+ * \class       ${2}
+ * \implements  ${3}
  *
  * \author      ${4:`!v g:snips_author`}
  * \date        `!v strftime('%d-%m-%y')`
@@ -185,9 +185,9 @@ abstract class ${2:`!v expand('%:t:r')`} implements ${3:BaseRepositoryInterface}
 #repository
 snippet l_r
 /*!
- * \namespace   $1
- * \class       $3
- * \implements  $4
+ * \namespace   ${1}
+ * \class       ${3}
+ * \implements  ${4}
  *
  * \author      ${5:`!v g:snips_author`}
  * \date        `!v strftime('%d-%m-%y')`
@@ -195,15 +195,15 @@ snippet l_r
 
 namespace ${1:Repositories\\${2}};
 
-class ${3:`!v expand('%:t:r')`} extends \\${6} implements ${4:$3RepositoryInterface} {
+class ${3:`!v expand('%:t:r')`} extends \\${6} implements ${4:${3}RepositoryInterface} {
     ${7}
 }
 
 #service
 snippet l_s
 /*!
- * \namespace   $1
- * \class       $2
+ * \namespace   ${1}
+ * \class       ${2}
  *
  * \author      ${6:`!v g:snips_author`}
  * \date        `!v strftime('%d-%m-%y')`
@@ -219,16 +219,16 @@ class ${2:`!v expand('%:t:r')`} {
     /*!
      * \fn      __construct
      */
-    public function __construct($4 $repo) {
-        $this->$5 = $repo;
+    public function __construct(${4} $repo) {
+        $this->${5} = $repo;
     }
 }
 
 #facade
 snippet l_f
 /*!
- * \namespace   $1
- * \class       $2
+ * \namespace   ${1}
+ * \class       ${2}
  *
  * \author      ${5:`!v g:snips_author`}
  * \date        `!v strftime('%d-%m-%y')`

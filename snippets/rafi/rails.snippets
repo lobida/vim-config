@@ -1,11 +1,11 @@
 snippet art
 	assert_redirected_to ${1:action}: '${2:index}'
 snippet artnp
-	assert_redirected_to ${1:parent}_${2:child}_path(${3:@$1}, ${0:@$2})
+	assert_redirected_to ${1:parent}_${2:child}_path(${3:@${1}}, ${0:@${2}})
 snippet artnpp
-	assert_redirected_to ${1:parent}_${2:child}_path(${0:@$1})
+	assert_redirected_to ${1:parent}_${2:child}_path(${0:@${1}})
 snippet artp
-	assert_redirected_to ${1:model}_path(${0:@$1})
+	assert_redirected_to ${1:model}_path(${0:@${1}})
 snippet artpp
 	assert_redirected_to ${0:model}s_path
 snippet asd
@@ -36,26 +36,26 @@ snippet crw
 	cattr_accessor :${0:attr_names}
 snippet defcreate
 	def create
-		@${1:model_class_name} = ${2:ModelClassName}.new($1_params)
+		@${1:model_class_name} = ${2:ModelClassName}.new(${1}_params)
 
 		respond_to do |format|
-			if @$1.save
-				flash[:notice] = '$2 was successfully created.'
-				format.html { redirect_to(@$1) }
-				format.xml  { render xml: @$1, status: :created, location: @$1 }
+			if @${1}.save
+				flash[:notice] = '${2} was successfully created.'
+				format.html { redirect_to(@${1}) }
+				format.xml  { render xml: @${1}, status: :created, location: @${1} }
 			else
 				format.html { render action: 'new' }
-				format.xml  { render xml: @$1.errors, status: :unprocessable_entity }
+				format.xml  { render xml: @${1}.errors, status: :unprocessable_entity }
 			end
 		end
 	end
 snippet defdestroy
 	def destroy
 		@${1:model_class_name} = ${2:ModelClassName}.find(params[:id])
-		@$1.destroy
+		@${1}.destroy
 
 		respond_to do |format|
-			format.html { redirect_to($1s_url) }
+			format.html { redirect_to(${1}s_url) }
 			format.xml  { head :ok }
 		end
 	end
@@ -69,7 +69,7 @@ snippet defindex
 
 		respond_to do |format|
 			format.html # index.html.erb
-			format.xml  { render xml: @$1s }
+			format.xml  { render xml: @${1}s }
 		end
 	end
 snippet defnew
@@ -78,7 +78,7 @@ snippet defnew
 
 		respond_to do |format|
 			format.html # new.html.erb
-			format.xml  { render xml: @$1 }
+			format.xml  { render xml: @${1} }
 		end
 	end
 snippet defshow
@@ -87,7 +87,7 @@ snippet defshow
 
 		respond_to do |format|
 			format.html # show.html.erb
-			format.xml  { render xml: @$1 }
+			format.xml  { render xml: @${1} }
 		end
 	end
 snippet defupdate
@@ -95,19 +95,19 @@ snippet defupdate
 		@${1:model_class_name} = ${2:ModelClassName}.find(params[:id])
 
 		respond_to do |format|
-			if @$1.update($1_params)
-				flash[:notice] = '$2 was successfully updated.'
-				format.html { redirect_to(@$1) }
+			if @${1}.update(${1}_params)
+				flash[:notice] = '${2} was successfully updated.'
+				format.html { redirect_to(@${1}) }
 				format.xml  { head :ok }
 			else
 				format.html { render action: 'edit' }
-				format.xml  { render xml: @$1.errors, status: :unprocessable_entity }
+				format.xml  { render xml: @${1}.errors, status: :unprocessable_entity }
 			end
 		end
 	end
 snippet defparams
 	def ${1:model_class_name}_params
-		params.require(:$1).permit()
+		params.require(:${1}).permit()
 	end
 snippet dele delegate .. to
 	delegate :${1:methods}, to: :${0:object}
@@ -122,7 +122,7 @@ snippet habtm
 snippet hm
 	has_many :${0:object}
 snippet hmd
-	has_many :${1:other}s, class_name: '${2:$1}', foreign_key: '${3:$1}_id', dependent: :destroy
+	has_many :${1:other}s, class_name: '${2:${1}}', foreign_key: '${3:${1}}_id', dependent: :destroy
 snippet hmt
 	has_many :${1:object}, through: :${0:object}
 snippet ho
@@ -156,7 +156,7 @@ snippet mapr
 snippet maprs
 	${1:map}.resources :${0:resource}
 snippet mapwo
-	${1:map}.with_options ${2:controller}: '${3:thing}' do |$3|
+	${1:map}.with_options ${2:controller}: '${3:thing}' do |${3}|
 		${0}
 	end
 
@@ -245,11 +245,11 @@ snippet rns
 snippet rp
 	render partial: '${0:item}'
 snippet rpc
-	render partial: '${1:item}', collection: ${0:@$1s}
+	render partial: '${1:item}', collection: ${0:@${1}s}
 snippet rpl
-	render partial: '${1:item}', locals: { ${2:$1}: ${0:@$1} }
+	render partial: '${1:item}', locals: { ${2:${1}}: ${0:@${1}} }
 snippet rpo
-	render partial: '${1:item}', object: ${0:@$1}
+	render partial: '${1:item}', object: ${0:@${1}}
 snippet rps
 	render partial: '${1:item}', status: ${0:500}
 snippet rt
@@ -262,7 +262,7 @@ snippet rts
 	render text: '${1:text to render}', status: ${0:401}
 snippet ru
 	render :update do |${1:page}|
-		$1.${0}
+		${1}.${0}
 	end
 snippet rxml
 	render xml: '${0:text to render}'
@@ -276,17 +276,17 @@ snippet sha1
 	Digest::SHA1.hexdigest(${0:string})
 snippet sweeper
 	class ${1:ModelClassName}Sweeper < ActionController::Caching::Sweeper
-		observe $1
+		observe ${1}
 
 		def after_save(${0:model_class_name})
-			expire_cache($2)
+			expire_cache(${2})
 		end
 
-		def after_destroy($2)
-			expire_cache($2)
+		def after_destroy(${2})
+			expire_cache(${2})
 		end
 
-		def expire_cache($2)
+		def expire_cache(${2})
 			expire_page
 		end
 	end

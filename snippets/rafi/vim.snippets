@@ -7,7 +7,7 @@ snippet guard script reload guard
 	if exists('${1:did_`vim_snippets#Filename()`}') || &cp${2: || version < 700}
 		finish
 	endif
-	let $1 = 1${0}
+	let ${1} = 1${0}
 snippet f function
 	fun! ${1:`expand('%') =~ 'autoload' ? substitute(matchstr(expand('%:p'),'autoload/\zs.*\ze.vim'),'[/\\]','#','g').'#' : ''`}${2:function_name}(${3})
 		${0}
@@ -25,7 +25,7 @@ snippet for for ... in loop
 snippet forkv for [key, value] in loop
 	for [${1},${2}] in items(${3})
 		${0}
-		unlet $1 $2
+		unlet ${1} ${2}
 	endfor
 snippet wh while loop
 	while ${1}

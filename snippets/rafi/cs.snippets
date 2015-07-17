@@ -22,17 +22,17 @@
 # | = protected
 # - = private
 #
-# Example: `cls&` expands to `internal class $1`.
+# Example: `cls&` expands to `internal class ${1}`.
 # Access modifiers might be doubled to indicate
 # different modifiers for get/set on properties.
-# Example: `pb+-` expands to `public bool $1 { get; private set; }`
+# Example: `pb+-` expands to `public bool ${1} { get; private set; }`
 #
 # Class Modifier Table
 # --------------------
 # ^ = static
 # % = abstract
 #
-# Example: `cls|%` expands to `protected abstract class $1`
+# Example: `cls|%` expands to `protected abstract class ${1}`
 #
 # On method and property snippets, you can directly set
 # one of the common types int, string and bool, if desired,
@@ -44,7 +44,7 @@
 # s = string
 # b = bool
 #
-# Example: `pi+&` expands to `public int $1 { get; internal set; }`
+# Example: `pi+&` expands to `public int ${1} { get; internal set; }`
 #
 # I'll most propably add more stuff in here like
 # * List/Array constructio
@@ -102,11 +102,11 @@ snippet wh
 	}
 # for loop
 snippet for
-	for (int ${1:i} = 0; $1 < ${2:count}; $1${3:++}) {
+	for (int ${1:i} = 0; ${1} < ${2:count}; ${1}${3:++}) {
 		${0}
 	}
 snippet forr
-	for (int ${1:i} = ${2:length}; $1 >= 0; $1--) {
+	for (int ${1:i} = ${2:length}; ${1} >= 0; ${1}--) {
 		${0}
 	}
 # foreach
@@ -374,7 +374,7 @@ snippet ///
 	/// ${0}
 	/// </summary>
 snippet <p
-	<param name="${1}">${2:$1}</param>
+	<param name="${1}">${2:${1}}</param>
 snippet <ex
 	<exception cref="${1:System.Exception}">${2}</exception>
 snippet <r
@@ -401,10 +401,10 @@ snippet eq
 # exception 
 snippet exc
 	public class ${1:MyException} : ${2:Exception} {
-            public $1() { }
-            public $1(string message) : base(message) { }
-            public $1(string message, Exception inner) : base(message, inner) { }
-            protected $1(
+            public ${1}() { }
+            public ${1}(string message) : base(message) { }
+            public ${1}(string message, Exception inner) : base(message, inner) { }
+            protected ${1}(
               System.Runtime.Serialization.SerializationInfo info,
               System.Runtime.Serialization.StreamingContext context)
                 : base(info, context) { }
@@ -419,7 +419,7 @@ snippet index
 snippet inv
 	EventHandler temp = ${1:MyEvent};
 	if (${2:temp} != null) {
-		$2();
+		${2}();
 	}
 # lock
 snippet lock
@@ -437,9 +437,9 @@ snippet prop
 snippet propf
     private ${1:int} ${2:myVar};
 
-    public $1 ${3:MyProperty} {
-        get { return $2; }
-        set { $2 = value; }
+    public ${1} ${3:MyProperty} {
+        get { return ${2}; }
+        set { ${2} = value; }
     }
 snippet propg
     public ${1:int} ${2:MyProperty} { get; private set; }

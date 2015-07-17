@@ -16,7 +16,7 @@ snippet eif
 	elif ${1:condition}; then
 		${0:# statements}
 snippet for
-	for (( ${2:i} = 0; $2 < ${1:count}; $2++ )); do
+	for (( ${2:i} = 0; ${2} < ${1:count}; ${2}++ )); do
 		${0:# statements}
 	done
 snippet fori

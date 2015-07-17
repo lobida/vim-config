@@ -39,13 +39,13 @@ snippet j.u
 ##
 ## Class
 snippet cl
-	class ${1:`vim_snippets#Filename("$1", "untitled")`} ${0}
+	class ${1:`vim_snippets#Filename("${1}", "untitled")`} ${0}
 snippet pcl
-	public class ${1:`vim_snippets#Filename("$1", "untitled")`} ${0}
+	public class ${1:`vim_snippets#Filename("${1}", "untitled")`} ${0}
 snippet in
-	interface ${1:`vim_snippets#Filename("$1", "untitled")`} ${2:extends Parent}
+	interface ${1:`vim_snippets#Filename("${1}", "untitled")`} ${2:extends Parent}
 snippet tc
-	public class ${1:`vim_snippets#Filename("$1")`} extends ${0:TestCase}
+	public class ${1:`vim_snippets#Filename("${1}")`} extends ${0:TestCase}
 ##
 ## Class Enhancements
 snippet ext
@@ -93,26 +93,26 @@ snippet v
 ##
 ## Declaration for ArrayList
 snippet d.al
-	List<${1:Object}> ${2:list} = new ArrayList<$1>();${0}
+	List<${1:Object}> ${2:list} = new ArrayList<${1}>();${0}
 ## Declaration for HashMap
 snippet d.hm
-	Map<${1:Object}, ${2:Object}> ${3:map} = new HashMap<$1, $2>();${0}
+	Map<${1:Object}, ${2:Object}> ${3:map} = new HashMap<${1}, ${2}>();${0}
 ## Declaration for HashSet
 snippet d.hs
-	Set<${1:Object}> ${2:set} = new HashSet<$1>();${0}
+	Set<${1:Object}> ${2:set} = new HashSet<${1}>();${0}
 ## Declaration for Stack
 snippet d.st
-	Stack<${1:Object}> ${2:stack} = new Stack<$1>();${0}
+	Stack<${1:Object}> ${2:stack} = new Stack<${1}>();${0}
 ##
 ## Singleton Pattern
 snippet singlet
 	private static class Holder {
-		private static final ${1:`vim_snippets#Filename("$1")`} INSTANCE = new $1();
+		private static final ${1:`vim_snippets#Filename("${1}")`} INSTANCE = new ${1}();
 	}
 
-	private $1() { }
+	private ${1}() { }
 
-	public static $1 getInstance() {
+	public static ${1} getInstance() {
 		return Holder.INSTANCE;
 	}
 ##
@@ -189,7 +189,7 @@ snippet @au
 snippet @br
 	@brief ${0:Description}
 snippet @fi
-	@file ${0:`vim_snippets#Filename("$1")`}.java
+	@file ${0:`vim_snippets#Filename("${1}")`}.java
 snippet @pa
 	@param ${0:param}
 snippet @re
@@ -244,7 +244,7 @@ snippet renx
 ## Setter and Getter Methods
 snippet set
 	${1:public} void set${3:}(${2:String} ${0:}){
-		this.$4 = $4;
+		this.${4} = ${4};
 	}
 snippet get
 	${1:public} ${2:String} get${3:}(){

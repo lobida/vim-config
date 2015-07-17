@@ -86,14 +86,14 @@ snippet ovdef
 	override def ${1:name}(${2:arg}) = ${0:}
 #first class function(see scalabook p 188)
 snippet fcf
-	(${1:a}: ${2:T}) => $1 ${0}
+	(${1:a}: ${2:T}) => ${1} ${0}
 snippet =>
 	${1:name} => ${0}
 #recursion
 snippet rec
 	def ${1:name}(${0:arg}) =
-		if($2) $2
-		else $1($2)
+		if(${2}) ${2}
+		else ${1}(${2})
 #curried method
 snippet crdef
 	def ${1:name}(${2:arg})(${3:arg}) = ${0:}
@@ -262,13 +262,13 @@ snippet athis
 #abstract class
 snippet abstract
 	abstract class ${1:name}${2:(arg)}${3: extends }${4: with} {
-		${5:override def toString = "$1"}
+		${5:override def toString = "${1}"}
 		${0}
 	}
 #class
 snippet class
 	class ${1:name}${2:(arg)}${3: extends }${4: with} {
-		${5:override def toString = "$1"}
+		${5:override def toString = "${1}"}
 		${0}
 	}
 #object
@@ -281,9 +281,9 @@ snippet trait
 	}
 #class with trait Ordered(page 265)
 snippet ordered
-	class ${1:name}${2:(arg)} extends Ordered[$1] ${3: with} {
-		${4:override def toString = "$1"}
-		def compare(that: $1) = ${5:this - that}
+	class ${1:name}${2:(arg)} extends Ordered[${1}] ${3: with} {
+		${4:override def toString = "${1}"}
+		def compare(that: ${1}) = ${5:this - that}
 		${0}
 	}
 #case class

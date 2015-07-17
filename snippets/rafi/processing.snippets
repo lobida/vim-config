@@ -11,7 +11,7 @@ snippet doc
 # doc comment
 snippet docc
 	/**
-	 *	${1:@private}$0
+	 *	${1:@private}${0}
 	 */
 	${0}
 # class
@@ -23,7 +23,7 @@ snippet class
 		//  CONSTRUCTOR
 		//--------------------------------------
 
-		public $2 (${4:arguments}) {
+		public ${2} (${4:arguments}) {
 			${0:// expression}
 		}
 	}
@@ -56,11 +56,11 @@ snippet var
 	${1:private/public }${2:static }${3:String} ${4:str}${5: =}${0:value};
 # var objects
 snippet obj
-	${1:private/public }${2:Object} ${3:o}${4: = new }$2(${0});
+	${1:private/public }${2:Object} ${3:o}${4: = new }${2}(${0});
 #loop for
 snippet for
-	for (int ${2:i} = 0; $2 < ${1:Things}.length; $2${3:++}) {
-		${0:$1[$2]}
+	for (int ${2:i} = 0; ${2} < ${1:Things}.length; ${2}${3:++}) {
+		${0:${1}[${2}]}
 	};
 #loop while
 snippet wh
@@ -216,7 +216,7 @@ snippet gl gl gen buffers
 
 	// You might need to create four buffers to store vertext data, normal data, texture coordinate data, and indices in vertex arrays
 	IntBuffer bufferObjects = IntBuffer.allocate(${1:4});
-	gl.glGenBuffers($1, bufferObjects);
+	gl.glGenBuffers(${1}, bufferObjects);
 
 	int vertexCount = ${2:3};
 	int numCoordinates = ${0:3};
@@ -317,10 +317,10 @@ snippet string
 	String ${1:str}${2: = "}${0:CCCP"};
 #array
 snippet array
-	${1:int}[] ${2:numbers}${3: = new $1}[${0:length}];
+	${1:int}[] ${2:numbers}${3: = new ${1}}[${0:length}];
 #object
 snippet object
-	${1:Object} ${2:o}${3: = new $1}(${0});
+	${1:Object} ${2:o}${3: = new ${1}}(${0});
 
 #curve
 snippet curve
@@ -434,7 +434,7 @@ snippet textWidth
 	textWidth(${0:data});
 snippet font
 	PFont ${1:font};
-	$1 = loadFont("${0:FFScala-32.vlw}");
+	${1} = loadFont("${0:FFScala-32.vlw}");
 #load font
 snippet loadFont
 	${1:font} = loadFont("${0:FFScala-32.vlw}");

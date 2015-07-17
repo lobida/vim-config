@@ -68,7 +68,7 @@ snippet ffff
 snippet ffhf
 	<%= ${1:f}.hidden_field :${0:attribute} %>
 snippet ffl
-	<%= ${1:f}.label :${2:attribute}, '${0:$2}' %>
+	<%= ${1:f}.label :${2:attribute}, '${0:${2}}' %>
 snippet ffpf
 	<%= ${1:f}.password_field :${0:attribute} %>
 snippet ffrb
@@ -80,7 +80,7 @@ snippet ffta
 snippet fftf
 	<%= ${1:f}.text_field :${0:attribute} %>
 snippet fields
-	<%= fields_for :${1:model}, @$1 do |${2:f}| %>
+	<%= fields_for :${1:model}, @${1} do |${2:f}| %>
 		${0}
 	<% end %>
 snippet i18
@@ -92,13 +92,13 @@ snippet jit
 snippet jsit
 	<%= javascript_include_tag "${0}" %>
 snippet lim
-	<%= link_to ${1:model}.${2:name}, ${3:$1}_path(${0:$1}) %>
+	<%= link_to ${1:model}.${2:name}, ${3:${1}}_path(${0:${1}}) %>
 snippet linp
-	<%= link_to "${1:Link text...}", ${2:parent}_${3:child}_path(${4:@$2}, ${0:@$3}) %>
+	<%= link_to "${1:Link text...}", ${2:parent}_${3:child}_path(${4:@${2}}, ${0:@${3}}) %>
 snippet linpp
-	<%= link_to "${1:Link text...}", ${2:parent}_${3:child}_path(${0:@$2}) %>
+	<%= link_to "${1:Link text...}", ${2:parent}_${3:child}_path(${0:@${2}}) %>
 snippet lip
-	<%= link_to "${1:Link text...}", ${2:model}_path(${0:@$2}) %>
+	<%= link_to "${1:Link text...}", ${2:model}_path(${0:@${2}}) %>
 snippet lipp
 	<%= link_to "${1:Link text...}", ${0:model}s_path %>
 snippet lt

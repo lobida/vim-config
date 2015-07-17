@@ -8,7 +8,7 @@ snippet **
 	**${1:Strong emphasis}** ${0}
 snippet _
 	\`${1:hyperlink-name}\`_
-	.. _\`$1\`: ${0:link-block}
+	.. _\`${1}\`: ${0:link-block}
 snippet =
 	${1:Title}
 	=====${2:=}
@@ -24,7 +24,7 @@ snippet fig:
 	.. figure:: ${1:img}
 		:alt: ${0:alter text}
 
-		$2
+		${2}
 snippet cont:
 	.. contents::
 		${0:content}

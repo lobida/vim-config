@@ -7,7 +7,7 @@
 snippet classheader
 	# == Class: ${1:`vim_snippets#Filename(expand('%:p:s?.*modules/??:h:h'), 'name')`}
 	#
-	# ${2:Full description of class $1 here}
+	# ${2:Full description of class ${1} here}
 	#
 	# === Parameters
 	#
@@ -28,7 +28,7 @@ snippet classheader
 	#
 	# === Examples
 	#
-	#  class { '$1':
+	#  class { '${1}':
 	#    parameter1 => [ 'just', 'an', 'example', ]
 	#  }
 	#
@@ -40,14 +40,14 @@ snippet classheader
 	#
 	# Copyright `strftime("%Y")` `g:snips_author`
 	#
-	class $1 (${3}){
+	class ${1} (${3}){
 		${4}
 	}
 
 snippet defheader
 	# == Define: ${1:`vim_snippets#Filename(expand('%:p:s?.*modules/??:r:s?/manifests/?::?'), 'name')`}
 	#
-	# ${2:Full description of defined resource type $1 here}
+	# ${2:Full description of defined resource type ${1} here}
 	#
 	# === Parameters
 	#
@@ -68,7 +68,7 @@ snippet defheader
 	#
 	# Provide some examples on how to use this type:
 	#
-	#   $1 { 'namevar':
+	#   ${1} { 'namevar':
 	#     basedir => '/tmp/src',
 	#   }
 	#
@@ -80,7 +80,7 @@ snippet defheader
 	#
 	# Copyright `strftime("%Y")` `g:snips_author`
 	#
-	define $1(${3}) {
+	define ${1}(${3}) {
 		${4}
 	}
 
@@ -180,7 +180,7 @@ snippet cron
 
 snippet exec
 	exec { "${1:name}":
-		command => "${2:$1}",
+		command => "${2:${1}}",
 		user    => "${3:root}",
 		${4}    => ${0},
 	}
@@ -188,9 +188,9 @@ snippet exec
 snippet user
 	user { "${1:user}":
 		ensure      => present,
-		comment     => "${2:$1}",
+		comment     => "${2:${1}}",
 		managehome  => true,
-		home        => "${0:/home/$1}",
+		home        => "${0:/home/${1}}",
 	}
 
 snippet group
@@ -221,7 +221,7 @@ snippet package
 
 snippet yumrepo
 	yumrepo { "${1:repo name}":
-		Descr   => "${2:$1}",
+		Descr   => "${2:${1}}",
 		enabled => ${0:1},
 	}
 

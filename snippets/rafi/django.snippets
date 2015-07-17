@@ -95,15 +95,15 @@ snippet modeladmin
 	class ${1:ModelName}Admin(admin.ModelAdmin):
 		${0}
 
-	admin.site.register($1, $1Admin)
+	admin.site.register(${1}, ${1}Admin)
 
 snippet tabularinline
 	class ${0:ModelName}Inline(admin.TabularInline):
-		model = $1
+		model = ${1}
 
 snippet stackedinline
 	class ${0:ModelName}Inline(admin.StackedInline):
-		model = $1
+		model = ${1}
 
 snippet r2r
 	return render_to_response('${1:template.html}', {

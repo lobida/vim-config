@@ -20,7 +20,7 @@ snippet theusual
 	import std.math, std.regex;
 ### Control Structures
 snippet for
-	for(int ${1:i} = 0; $1 < ${2:count}; $1++) {
+	for(int ${1:i} = 0; ${1} < ${2:count}; ${1}++) {
 		${0}
 	}
 snippet fe
@@ -157,11 +157,11 @@ snippet del
 	delegate (${1:int x}) => ${2}${3:;} 
 ### Templates
 snippet temp 
-	template ${1:`vim_snippets#Filename("$2", "untitled")`}(${2:T}) {
+	template ${1:`vim_snippets#Filename("${2}", "untitled")`}(${2:T}) {
 		${0}
 	}
 snippet tempif
-	template ${1:`vim_snippets#Filename("$2", "untitled")`}(${2:T}) if(${3:isSomeString!}$2) {
+	template ${1:`vim_snippets#Filename("${2}", "untitled")`}(${2:T}) if(${3:isSomeString!}${2}) {
 		${0}	
 	}
 snippet opApply
@@ -178,19 +178,19 @@ snippet	system
 	@system
 ### OOPs
 snippet cl
-	class${1:(T)} ${2:`vim_snippets#Filename("$3", "untitled")`} {
+	class${1:(T)} ${2:`vim_snippets#Filename("${3}", "untitled")`} {
 		${0}	
 	}
 snippet str
-	struct${1:(T)} ${2:`vim_snippets#Filename("$3", "untitled")`} {
+	struct${1:(T)} ${2:`vim_snippets#Filename("${3}", "untitled")`} {
 		${0}	
 	}
 snippet uni
-	union${1:(T)} ${2:`vim_snippets#Filename("$3", "untitled")`} {
+	union${1:(T)} ${2:`vim_snippets#Filename("${3}", "untitled")`} {
 		${0}	
 	}
 snippet inter
-	interface I${1:`vim_snippets#Filename("$2", "untitled")`} {
+	interface I${1:`vim_snippets#Filename("${2}", "untitled")`} {
 		${0}
 	}
 snippet enum
@@ -247,7 +247,7 @@ snippet reduce
 	reduce!(${1:f})(${2:xs});
 	${0}
 snippet find
-	find!(${1:p})($2:xs);
+	find!(${1:p})(${2}:xs);
 	${0}
 snippet aa
 	${1:int}[${2:string}] ${3:dict} = ${0};

@@ -11,7 +11,7 @@ snippet ncol
 snippet dcol
 	${1:name}	date	${3:default sysdate}	${0:not null}
 snippet ind
-	create index ${0:$1_$2} on ${1:table}(${2:column});
+	create index ${0:${1}_${2}} on ${1:table}(${2:column});
 snippet uind
 	create unique index ${1:name} on ${2:table}(${0:column});
 snippet tblcom

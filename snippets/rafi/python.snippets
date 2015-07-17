@@ -11,7 +11,7 @@ snippet from
 # Module Docstring
 snippet docs
 	"""
-	File: ${1:`vim_snippets#Filename('$1.py', 'foo.py')`}
+	File: ${1:`vim_snippets#Filename('${1}.py', 'foo.py')`}
 	Author: `g:snips_author`
 	Email: `g:snips_email`
 	Github: `g:snips_github`
@@ -33,15 +33,15 @@ snippet with
 # New Class
 snippet cl
 	class ${1:ClassName}(${2:object}):
-		"""${3:docstring for $1}"""
+		"""${3:docstring for ${1}}"""
 		def __init__(self, ${4:arg}):
-			${5:super($1, self).__init__()}
-			self.$4 = $4
+			${5:super(${1}, self).__init__()}
+			self.${4} = ${4}
 			${0}
 # New Function
 snippet def
 	def ${1:fname}(${2:`indent('.') ? 'self' : ''`}):
-		"""${3:docstring for $1}"""
+		"""${3:docstring for ${1}}"""
 		${0}
 snippet deff
 	def ${1:fname}(${2:`indent('.') ? 'self' : ''`}):
@@ -53,15 +53,15 @@ snippet defm
 # New Property
 snippet property
 	def ${1:foo}():
-		doc = "${2:The $1 property.}"
+		doc = "${2:The ${1} property.}"
 		def fget(self):
-			${3:return self._$1}
+			${3:return self._${1}}
 		def fset(self, value):
-			${4:self._$1 = value}
+			${4:self._${1} = value}
 		def fdel(self):
-			${0:del self._$1}
+			${0:del self._${1}}
 		return locals()
-	$1 = property(**$1())
+	${1} = property(**${1}())
 # Ifs
 snippet if
 	if ${1:condition}:
@@ -92,26 +92,26 @@ snippet try Try/Except
 	try:
 		${1}
 	except ${2:Exception}, ${3:e}:
-		${0:raise $3}
+		${0:raise ${3}}
 snippet try Try/Except/Else
 	try:
 		${1}
 	except ${2:Exception}, ${3:e}:
-		${4:raise $3}
+		${4:raise ${3}}
 	else:
 		${0}
 snippet try Try/Except/Finally
 	try:
 		${1}
 	except ${2:Exception}, ${3:e}:
-		${4:raise $3}
+		${4:raise ${3}}
 	finally:
 		${0}
 snippet try Try/Except/Else/Finally
 	try:
 		${1}
 	except ${2:Exception}, ${3:e}:
-		${4:raise $3}
+		${4:raise ${3}}
 	else:
 		${5}
 	finally:
@@ -202,7 +202,7 @@ snippet epydoc
 	"""${1:Description}
 
 	@param ${2:param}: ${3: Description}
-	@type  $2: ${4: Type}
+	@type  ${2}: ${4: Type}
 
 	@return: ${5: Description}
 	@rtype : ${6: Type}
@@ -211,11 +211,11 @@ snippet epydoc
 	"""
 snippet dol
 	def ${1:__init__}(self, *args, **kwargs):
-	    super(${0:ClassName}, self).$1(*args, **kwargs)
+	    super(${0:ClassName}, self).${1}(*args, **kwargs)
 snippet kwg
-	self.${1:var_name} = kwargs.get('$1', ${2:None})
+	self.${1:var_name} = kwargs.get('${1}', ${2:None})
 snippet lkwg
-	${1:var_name} = kwargs.get('$1', ${2:None})
+	${1:var_name} = kwargs.get('${1}', ${2:None})
 snippet args
 	*args${1:,}${0}
 snippet kwargs

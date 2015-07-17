@@ -32,9 +32,9 @@ snippet inst
 snippet type
 	type ${1:Type} = ${0:Type}
 snippet data
-	data ${1:Type} = ${2:$1} ${0:Int}
+	data ${1:Type} = ${2:${1}} ${0:Int}
 snippet newtype
-	newtype ${1:Type} = ${2:$1} ${0:Int}
+	newtype ${1:Type} = ${2:${1}} ${0:Int}
 snippet class
 	class ${1:Class} a where
 		${0}
@@ -45,13 +45,13 @@ snippet module
 
 snippet const
 	${1:name} :: ${2:a}
-	$1 = ${0:undefined}
+	${1} = ${0:undefined}
 snippet fn
 	${1:fn} :: ${2:a} -> ${3:a}
-	$1 ${4} = ${0:undefined}
+	${1} ${4} = ${0:undefined}
 snippet fn2
 	${1:fn} :: ${2:a} -> ${3:a} -> ${4:a}
-	$1 ${5} = ${0:undefined}
+	${1} ${5} = ${0:undefined}
 snippet ap
 	${1:map} ${2:fn} ${0:list}
 snippet do

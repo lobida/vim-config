@@ -14,11 +14,11 @@ snippet ul
 snippet rp
 	= render :partial => "${0:item}"
 snippet rpc
-	= render :partial => "${1:item}", :collection => ${0:@$1s}
+	= render :partial => "${1:item}", :collection => ${0:@${1}s}
 snippet rpl
-	= render :partial => "${1:item}", :locals => { :${2:$1} => ${0:@$1}
+	= render :partial => "${1:item}", :locals => { :${2:${1}} => ${0:@${1}}
 snippet rpo
-	= render :partial => "${1:item}", :object => ${0:@$1}
+	= render :partial => "${1:item}", :object => ${0:@${1}}
 snippet lt
 	= link_to ${1:name}, ${2:dest}
 snippet mt

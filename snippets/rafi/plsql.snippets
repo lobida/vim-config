@@ -3,13 +3,13 @@ snippet ps
 	create or replace package ${1:name}
 	as
 		${0:-- spec}
-	end; -- end of package spec $1
+	end; -- end of package spec ${1}
 # create package body
 snippet pb
 	create or replace package body ${1:name}
 	as
 		${0:-- body}
-	end; -- end of package body $1;
+	end; -- end of package body ${1};
 # package procedure spec
 snippet pps
 	procedure ${1:name}(${0:args});
@@ -19,7 +19,7 @@ snippet ppb
 	as
 	begin
 		${0:-- body}
-	end $2;
+	end ${2};
 # package function spec
 snippet pfs
 	function ${1:name}(${2:args})
@@ -29,11 +29,11 @@ snippet pfb
 	function ${1:name}(${2:args})
 	  return ${3:type}
 	as
-		l_res	$3;
+		l_res	${3};
 	begin
 		${0:-- body};
 		return l_res;
-	end $1;
+	end ${1};
 # snow errors
 snippet err
 	show errors;
@@ -69,7 +69,7 @@ snippet dec
 # return pipe row
 snippet rpipe
 	for ${1:i} in 1 .. ${0:l_res}.count loop
-		pipe row( $2($1) );
+		pipe row( ${2}(${1}) );
 	end loop;
 	return;
 # bulk collect
@@ -93,8 +93,8 @@ snippet fors
 	end loop;
 # for loop with collection
 snippet forc
-	for ${1:i} in ${2:l_var}.first .. $2.last loop
-		${0: -- dbms_output.put_line($2($1)); }
+	for ${1:i} in ${2:l_var}.first .. ${2}.last loop
+		${0: -- dbms_output.put_line(${2}(${1})); }
 	end loop;
 # if
 snippet if

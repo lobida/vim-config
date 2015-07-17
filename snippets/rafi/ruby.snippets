@@ -75,11 +75,11 @@ snippet eif
 		${0}
 snippet ifee
 	if ${1:condition}
-		$2
+		${2}
 	elsif ${3:condition}
-		$4
+		${4}
 	else
-		$0
+		${0}
 	end
 snippet unless
 	unless ${1:condition}
@@ -87,17 +87,17 @@ snippet unless
 	end
 snippet unlesse
 	unless ${1:condition}
-		$2
+		${2}
 	else
-		$0
+		${0}
 	end
 snippet unlesee
 	unless ${1:condition}
-		$2
+		${2}
 	elsif ${3:condition}
-		$4
+		${4}
 	else
-		$0
+		${0}
 	end
 snippet wh
 	while ${1:condition}
@@ -105,7 +105,7 @@ snippet wh
 	end
 snippet for
 	for ${1:e} in ${2:c}
-	$1 > $2
+	${1} > ${2}
 		${0}
 	end
 snippet until
@@ -249,7 +249,7 @@ snippet usau
 snippet array
 	Array.new(${1:10}) { |${2:i}| ${0} }
 snippet hash
-	Hash.new { |${1:hash}, ${2:key}| $1[$2] = ${0} }
+	Hash.new { |${1:hash}, ${2:key}| ${1}[${2}] = ${0} }
 snippet file File.foreach() { |line| .. }
 	File.foreach(${1:'path/to/file'}) { |${2:line}| ${0} }
 snippet file File.read()
@@ -266,7 +266,7 @@ snippet fil
 	fill(${1:range}) { |${2:i}| ${0} }
 # flatten_once()
 snippet flao
-	reduce(Array.new) { |${1:arr}, ${2:a}| $1.push(*$2) }
+	reduce(Array.new) { |${1:arr}, ${2:a}| ${1}.push(*${2}) }
 snippet zip
 	zip(${1:enums}) { |${2:row}| ${0} }
 # downto(0) { |n| .. }
@@ -484,7 +484,7 @@ snippet tc
 
 	require '${1:library_file_name}'
 
-	class Test${2:$1} < Test::Unit::TestCase
+	class Test${2:${1}} < Test::Unit::TestCase
 		def test_${3:case_name}
 			${0}
 		end
@@ -562,10 +562,10 @@ snippet rep
 	results.report('${1:name}:') { TESTS.times { ${0} } }
 # Marshal.dump(.., file)
 snippet Md
-	File.open('${1:path/to/file.dump}', 'wb') { |${2:file}| Marshal.dump(${3:obj}, $2) }
+	File.open('${1:path/to/file.dump}', 'wb') { |${2:file}| Marshal.dump(${3:obj}, ${2}) }
 # Mashal.load(obj)
 snippet Ml
-	File.open('${1:path/to/file.dump}', 'rb') { |${2:file}| Marshal.load($2) }
+	File.open('${1:path/to/file.dump}', 'rb') { |${2:file}| Marshal.load(${2}) }
 # deep_copy(..)
 snippet deec
 	Marshal.load(Marshal.dump(${1:obj_to_copy}))

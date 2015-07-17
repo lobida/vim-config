@@ -112,7 +112,7 @@ snippet alt
 snippet charset
 	charset="${1:utf-8}"
 snippet data
-	data-${1}="${2:$1}"
+	data-${1}="${2:${1}}"
 snippet for
 	for="${1}"
 snippet height
@@ -141,13 +141,13 @@ snippet width
 	width="${1}"
 # Elements
 snippet a
-	<a href="${1:#}">${0:$1}</a>
+	<a href="${1:#}">${0:${1}}</a>
 snippet a.
-	<a class="${1}" href="${2:#}">${0:$1}</a>
+	<a class="${1}" href="${2:#}">${0:${1}}</a>
 snippet a#
-	<a id="${1}" href="${2:#}">${0:$1}</a>
+	<a id="${1}" href="${2:#}">${0:${1}}</a>
 snippet a:ext
-	<a href="http://${1:example.com}">${0:$1}</a>
+	<a href="http://${1:example.com}">${0:${1}}</a>
 snippet a:mail
 	<a href="mailto:${1:joe@example.com}?subject=${2:feedback}">${0:email me}</a>
 snippet ac
@@ -499,53 +499,53 @@ snippet img.
 snippet img#
 	<img id="${1}" src="${2}" alt="${3}" />
 snippet input
-	<input type="${1:text/submit/hidden/button/image}" name="${2}" id="${3:$2}" value="${4}" />
+	<input type="${1:text/submit/hidden/button/image}" name="${2}" id="${3:${2}}" value="${4}" />
 snippet input.
-	<input class="${1}" type="${2:text/submit/hidden/button/image}" name="${3}" id="${4:$3}" value="${5}" />
+	<input class="${1}" type="${2:text/submit/hidden/button/image}" name="${3}" id="${4:${3}}" value="${5}" />
 snippet input:text
-	<input type="text" name="${1}" id="${2:$1}" value="${3}" />
+	<input type="text" name="${1}" id="${2:${1}}" value="${3}" />
 snippet input:submit
-	<input type="submit" name="${1}" id="${2:$1}" value="${3}" />
+	<input type="submit" name="${1}" id="${2:${1}}" value="${3}" />
 snippet input:hidden
-	<input type="hidden" name="${1}" id="${2:$1}" value="${3}" />
+	<input type="hidden" name="${1}" id="${2:${1}}" value="${3}" />
 snippet input:button
-	<input type="button" name="${1}" id="${2:$1}" value="${3}" />
+	<input type="button" name="${1}" id="${2:${1}}" value="${3}" />
 snippet input:image
-	<input type="image" name="${1}" id="${2:$1}" src="${3}" alt="${4}" />
+	<input type="image" name="${1}" id="${2:${1}}" src="${3}" alt="${4}" />
 snippet input:checkbox
-	<input type="checkbox" name="${1}" id="${2:$1}" />
+	<input type="checkbox" name="${1}" id="${2:${1}}" />
 snippet input:radio
-	<input type="radio" name="${1}" id="${2:$1}" />
+	<input type="radio" name="${1}" id="${2:${1}}" />
 snippet input:color
-	<input type="color" name="${1}" id="${2:$1}" value="${3}" />
+	<input type="color" name="${1}" id="${2:${1}}" value="${3}" />
 snippet input:date
-	<input type="date" name="${1}" id="${2:$1}" value="${3}" />
+	<input type="date" name="${1}" id="${2:${1}}" value="${3}" />
 snippet input:datetime
-	<input type="datetime" name="${1}" id="${2:$1}" value="${3}" />
+	<input type="datetime" name="${1}" id="${2:${1}}" value="${3}" />
 snippet input:datetime-local
-	<input type="datetime-local" name="${1}" id="${2:$1}" value="${3}" />
+	<input type="datetime-local" name="${1}" id="${2:${1}}" value="${3}" />
 snippet input:email
-	<input type="email" name="${1}" id="${2:$1}" value="${3}" />
+	<input type="email" name="${1}" id="${2:${1}}" value="${3}" />
 snippet input:file
-	<input type="file" name="${1}" id="${2:$1}" value="${3}" />
+	<input type="file" name="${1}" id="${2:${1}}" value="${3}" />
 snippet input:month
-	<input type="month" name="${1}" id="${2:$1}" value="${3}" />
+	<input type="month" name="${1}" id="${2:${1}}" value="${3}" />
 snippet input:number
-	<input type="number" name="${1}" id="${2:$1}" value="${3}" />
+	<input type="number" name="${1}" id="${2:${1}}" value="${3}" />
 snippet input:password
-	<input type="password" name="${1}" id="${2:$1}" value="${3}" />
+	<input type="password" name="${1}" id="${2:${1}}" value="${3}" />
 snippet input:range
-	<input type="range" name="${1}" id="${2:$1}" value="${3}" />
+	<input type="range" name="${1}" id="${2:${1}}" value="${3}" />
 snippet input:reset
-	<input type="reset" name="${1}" id="${2:$1}" value="${3}" />
+	<input type="reset" name="${1}" id="${2:${1}}" value="${3}" />
 snippet input:search
-	<input type="search" name="${1}" id="${2:$1}" value="${3}" />
+	<input type="search" name="${1}" id="${2:${1}}" value="${3}" />
 snippet input:time
-	<input type="time" name="${1}" id="${2:$1}" value="${3}" />
+	<input type="time" name="${1}" id="${2:${1}}" value="${3}" />
 snippet input:url
-	<input type="url" name="${1}" id="${2:$1}" value="${3}" />
+	<input type="url" name="${1}" id="${2:${1}}" value="${3}" />
 snippet input:week
-	<input type="week" name="${1}" id="${2:$1}" value="${3}" />
+	<input type="week" name="${1}" id="${2:${1}}" value="${3}" />
 snippet ins
 	<ins>${0}</ins>
 snippet kbd
@@ -553,14 +553,14 @@ snippet kbd
 snippet keygen
 	<keygen>${0}</keygen>
 snippet label
-	<label for="${0:$1}">${1}</label>
+	<label for="${0:${1}}">${1}</label>
 snippet label:i
-	<label for="${2:$1}">${1}</label>
-	<input type="${3:text/submit/hidden/button}" name="${4:$2}" id="${5:$2}" value="${6}" />
+	<label for="${2:${1}}">${1}</label>
+	<input type="${3:text/submit/hidden/button}" name="${4:${2}}" id="${5:${2}}" value="${6}" />
 snippet label:s
-	<label for="${2:$1}">${1}</label>
-	<select name="${3:$2}" id="${4:$2}">
-		<option value="${5}">${0:$5}</option>
+	<label for="${2:${1}}">${1}</label>
+	<select name="${3:${2}}" id="${4:${2}}">
+		<option value="${5}">${0:${5}}</option>
 	</select>
 snippet legend
 	<legend>${0}</legend>
@@ -605,7 +605,7 @@ snippet map.
 		${0}
 	</map>
 snippet map#
-	<map name="${1}" id="${2:$1}>
+	<map name="${1}" id="${2:${1}}>
 		${0}
 	</map>
 snippet map+
@@ -662,11 +662,11 @@ snippet object
 	</object>
 # Embed QT Movie
 snippet movie
-	<object width="$2" height="$3" classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B"
+	<object width="${2}" height="${3}" classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B"
 	codebase="http://www.apple.com/qtactivex/qtplugin.cab">
-		<param name="src" value="$1" />
-		<param name="controller" value="$4" />
-		<param name="autoplay" value="$5" />
+		<param name="src" value="${1}" />
+		<param name="controller" value="${4}" />
+		<param name="autoplay" value="${5}" />
 		<embed src="${1:movie.mov}"
 			width="${2:320}" height="${3:240}"
 			controller="${4:true}" autoplay="${5:true}"
@@ -691,15 +691,15 @@ snippet ol+
 		li+${0}
 	</ol>
 snippet opt
-	<option value="${1}">${0:$1}</option>
+	<option value="${1}">${0:${1}}</option>
 snippet opt+
-	<option value="${1}">${2:$1}</option>
+	<option value="${1}">${2:${1}}</option>
 	opt+${0}
 snippet optt
 	<option>${0}</option>
 snippet optgroup
 	<optgroup>
-		<option value="${1}">${2:$1}</option>
+		<option value="${1}">${2:${1}}</option>
 		opt+${0}
 	</optgroup>
 snippet output
@@ -759,16 +759,16 @@ snippet section#
 		${0}
 	</section>
 snippet select
-	<select name="${1}" id="${2:$1}">
+	<select name="${1}" id="${2:${1}}">
 		${0}
 	</select>
 snippet select.
-	<select name="${1}" id="${2:$1}" class="${3}>
+	<select name="${1}" id="${2:${1}}" class="${3}>
 		${0}
 	</select>
 snippet select+
-	<select name="${1}" id="${2:$1}">
-		<option value="${3}">${4:$3}</option>
+	<select name="${1}" id="${2:${1}}">
+		<option value="${3}">${4:${3}}</option>
 		opt+${0}
 	</select>
 snippet small
@@ -821,7 +821,7 @@ snippet td+
 	<td>${1}</td>
 	td+${0}
 snippet textarea
-	<textarea name="${1}" id="${2:$1}" rows="${3:8}" cols="${4:40}">${5}</textarea>
+	<textarea name="${1}" id="${2:${1}}" rows="${3:8}" cols="${4:40}">${5}</textarea>
 snippet tfoot
 	<tfoot>
 		${0}
@@ -840,7 +840,7 @@ snippet thead
 		${0}
 	</thead>
 snippet time
-	<time datetime="${1}" pubdate="${2:$1}">${0:$1}</time>
+	<time datetime="${1}" pubdate="${2:${1}}">${0:${1}}</time>
 snippet title
 	<title>${0:`substitute(vim_snippets#Filename('', 'Page Title'), '^.', '\u&', '')`}</title>
 snippet tr
