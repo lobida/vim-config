@@ -1,16 +1,20 @@
 " tagbar
 autocmd VimEnter * nested :TagbarOpen
 " VimFiler
- autocmd VimEnter * VimFiler -buffer-name=explorer -split -simple -winwidth=40 -toggle -project -no-quit
+autocmd VimEnter * VimFiler -buffer-name=explorer -split -simple -winwidth=40 -toggle -project -no-quit
 " aws
 let g:AWSVimValidate = 1
+" org
+let g:org_todo_keywords = [['TODO(t)', '|', 'DONE(d)'],
+      \ ['INPROCESS(i)', 'PENDING(p)', 'RESOLVED(r)'],
+      \ ['CANCELED(c)']]
 " tinyline
 " set statusline+=%(⎇\ %{TlBranchName()}\ %) "| Git branch name    | ⎇\master
 " Editing mappings
 map 0 ^
 nmap ;  ;
 nmap ,  , 
-nmap \  \ 
+let maplocalleader = "\\"
 " Move a line of text using ALT+[jk] or Comamnd+[jk] on mac
 nmap <M-j> mz:m+<cr>`z
 nmap <M-k> mz:m-2<cr>`z
