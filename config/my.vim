@@ -5,11 +5,7 @@ autocmd VimEnter * VimFiler -buffer-name=explorer -split -simple -winwidth=40 -t
 " aws
 let g:AWSVimValidate = 1
 " org
-let g:org_todo_keywords = [['TODO(t)', '|', 'DONE(d)'],
-      \ ['INPROCESS(i)', 'PENDING(p)', 'RESOLVED(r)'],
-      \ ['CANCELED(c)']]
-" tinyline
-" set statusline+=%(⎇\ %{TlBranchName()}\ %) "| Git branch name    | ⎇\master
+let g:org_todo_keywords = ['TODO', 'DONE', 'INPROCESS', 'PENDING', 'RESOLVED', 'CANCELED']
 " Editing mappings
 map 0 ^
 nmap ;  ;

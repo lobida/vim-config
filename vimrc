@@ -19,8 +19,8 @@ if isdirectory($XDG_CONFIG_HOME.'/vim')
 	let $VIMPATH=expand('$XDG_CONFIG_HOME/vim')
 	let $VARPATH=expand('$XDG_CACHE_HOME/vim')
 else
-	let $VIMPATH=expand('D:\HashiCorp\Vagrant\embedded\gVimPortable\vim-config')
-	let $VARPATH=expand('D:\HashiCorp\Vagrant\embedded\gVimPortable\vim-config\cache\vim')
+	let $VIMPATH=expand('~/vim-config')
+	let $VARPATH=expand('~/vim-config/cache/vim')
 endif
 
 function! s:source_file(path)
