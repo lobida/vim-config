@@ -1,0 +1,10 @@
+* Online
+** TODO JDN Chef-solo
+   - [X] get cookbooks
+   - [ ] get env
+   - [ ] get role
+   - [ ] read deploy docs
+   - [ ] setup kitchen chef-solo
+   - [ ] run kitchen test
+   - [ ] verify result
+   - [ ] comments
