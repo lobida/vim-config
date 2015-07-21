@@ -1,5 +1,5 @@
 * Online
-** TODO JDN Chef-solo
+** INPROCESS JDN Chef-solo
    - [X] get cookbooks
    - [ ] get env
    - [ ] get role
@@ -8,3 +8,9 @@
    - [ ] run kitchen test
    - [ ] verify result
    - [ ] comments
+
+
+* Ruby Training
+** The Well-Grounded notes
+** PPT
+** Chef Example

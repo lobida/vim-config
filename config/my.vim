@@ -5,7 +5,7 @@ autocmd VimEnter * VimFiler -buffer-name=explorer -split -simple -winwidth=40 -t
 " aws
 let g:AWSVimValidate = 1
 " org
-let g:org_todo_keywords = ['TODO', 'DONE', 'INPROCESS', 'PENDING', 'RESOLVED', 'CANCELED']
+let g:org_todo_keywords = ['TODO', 'INPROCESS', 'PENDING', 'RESOLVED', 'DONE', 'CANCELED']
 " Editing mappings
 map 0 ^
 nmap ;  ;
