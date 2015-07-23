@@ -12,7 +12,7 @@ set lazyredraw               " don't redraw while in macros
 set hidden                   " hide buffers when abandoned instead of unload
 set encoding=utf-8           " Set utf8 as standard encoding
 scriptencoding utf-8         " Must be after encoding and before mb chars
-set ffs=unix,dos,mac         " Use Unix as the standard file type
+set ffs=unix				         " Use Unix as the standard file type
 set magic                    " For regular expressions turn magic on
 set path=.,**                " Directories to search when using gf
 set virtualedit=block        " Position cursor anywhere in visual block

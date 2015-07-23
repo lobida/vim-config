@@ -1,8 +1,9 @@
 * Online
 ** INPROCESS JDN Chef-solo
    - [X] get cookbooks
-   - [ ] get env
-   - [ ] get role
+   - [X] get env
+   - [X] get role
+   - [ ] go through JDC chef-solo env
    - [ ] read deploy docs
    - [ ] setup kitchen chef-solo
    - [ ] run kitchen test
@@ -13,4 +14,65 @@
 * Ruby Training
 ** The Well-Grounded notes
 ** PPT
+   - [ ] introduce
+   - [ ] string
+   - [ ] array
+   - [ ] hash
+   - [ ] symbols
+   - [ ] file
+   - [ ] block
+   - [ ] control struct
+   - [ ] Try one of chef provider
+   - [ ] module
+   - [ ] class
+         - [ ] attributes
+         - [ ] inheritance
+         - [ ] self
+         - [ ] super
 ** Chef Example
+
+* MY VIM
+** Basic Movement
+   - [ ] <>
+** Debug with VIM env
+
+* PENDING Windows working env
+** cygwin64
+   - [ ] knife
+   - [ ] pip
+   - [ ] gvim
+   - [ ] vagrant
+
+* CANCELED Emacs
+** Basic movement
+*** daf
+** Plugins
+*** Interface enhacement
+**** TODO evil # An e xtensible vi l ayer: manipulate Emacs with Vi key binding
+ - [ ] setup
+ - [ ] plugins
+**** IDO # [built-in] Interactively do things with buffers and files
+**** winner # "Undo"(and "redo") changes in the window configuration with the key
+*** File Manager
+**** Dired  # Dir ectory Ed itor. A customizable great file manager
+**** Dired+ # Functional & interface extensions for Dired
+*** Navigation
+**** windmove # [built-in] Tired with C-x o? Now you can use shift+arrows to jump between windows
+**** imenu # [built-in] Menus for accessing locations in documents
+*** Package Management
+**** package # [built-in] Install and manage Emacs packages easily
+**** paradox # Modernizing Emacs' Package Menu with package ratings, usage statistics, customizability & more
+**** req-package # A use-package wrapper for package runtime dependencies management.
+**** use-package # A declaration macro to isolate package configuration in a way that is performance-oriented and tidy
+*** Project management
+**** Project-explorer # a tree project explorer
+**** Projectile #  Project Interaction Library for Emacs
+*** Note
+**** INPROGRESS org # Write notes, GTD, authoring, publish and wash dishes
+     - State "INPROGRESS" from "TODO"       [2015-07-15 ÖÜÈý 17:02]
+ - [ ] hotkeys
+ - [ ] tabs
+ - [ ] tags
+
+*** TODO Version control
+**** Magit # Interacting with git
