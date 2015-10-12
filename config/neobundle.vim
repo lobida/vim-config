@@ -31,6 +31,7 @@ NeoBundle 'rafi/vim-tagabana', { 'directory': 'tagabana' }
 NeoBundle 'm-kat/aws-vim'
 let g:AWSVimValidate = 1
 NeoBundle 'ngmy/vim-rubocop'
+NeoBundle 'tpope/vim-rails'
 " NeoBundle 'bling/vim-airline'
 NeoBundle 'maxbrunsfeld/vim-emacs-bindings'
 NeoBundle 'WolfgangMehner/vim-plugins'
