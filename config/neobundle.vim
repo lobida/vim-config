@@ -29,6 +29,7 @@ NeoBundle 'rafi/vim-tagabana', { 'directory': 'tagabana' }
 
 " My old plugins
 NeoBundle 'violetyk/neosnippet-aws-cloud-formation'
+NeoBundle 'm-kat/aws-vim'
 let g:AWSVimValidate = 1
 NeoBundle 'ngmy/vim-rubocop'
 NeoBundle 'tpope/vim-rails'
