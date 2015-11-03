@@ -28,7 +28,7 @@ NeoBundle 'rafi/vim-tinyline', { 'directory': 'tinyline' }
 NeoBundle 'rafi/vim-tagabana', { 'directory': 'tagabana' }
 
 " My old plugins
-NeoBundle 'm-kat/aws-vim'
+NeoBundle 'violetyk/neosnippet-aws-cloud-formation'
 let g:AWSVimValidate = 1
 NeoBundle 'ngmy/vim-rubocop'
 NeoBundle 'tpope/vim-rails'
